@@ -18,10 +18,9 @@ for (const link of links) {
 }
 
 // mudar o header da pagina quando der scroll
-
+const header = document.querySelector('#header')
+const navHeight = header.offsetHeight
 function changeHeaderWhenScroll() {
-    const header = document.querySelector('#header')
-    const navHeight = header.offsetHeight
 
     if (window.scrollY >= navHeight) {
         // scroll é maior que a altira do header
@@ -51,7 +50,6 @@ const swiper = new Swiper('.swiper-container', {
 })
 
 // ScrollReveal JS Mostrar elementos quando der scroll na pagina
-
 const scrollReveal = ScrollReveal({
     origin: 'top',
     distance: '30px',
@@ -71,9 +69,8 @@ scrollReveal.reveal(
 
 
 // Botão voltar para o Topo da Pagina
-
+const backToTopButton = document.querySelector('.back-to-top')
 function backToTop() {
-    const backToTopButton = document.querySelector('.back-to-top')
     if (window.scrollY >= 560) {
         backToTopButton.classList.add('show')
     } else {
@@ -81,10 +78,36 @@ function backToTop() {
     }
 }
 
+// MENU ATIVO CONFORME A SEÇÃO VISIVEL NA PAGINA
+const sections = document.querySelectorAll('main section[id]')
+function activateMenuAtCurrentSection() {
+    const checkpoint = window.pageXOffset + (window.innerHeight / 8) * 4
+
+    for (const section of sections) {
+        const sectionTop = section.offsetTop
+        const sectionHeight = section.offsetHeight
+        const sectionId = section.getAttribute('id')
+
+        const checkpointInStart = checkpoint >= sectionTop
+        const checkpointInEnd = checkpoint <= sectionTop + sectionHeight
+
+        if (checkpointInStart && checkpointInEnd) {
+            document.querySelector('nav ul li a[href*=' + sectionId + ']')
+                .classList.add('active')
+        } else {
+            document.querySelector('nav ul li a[href*=' + sectionId + ']')
+                .classList.remove('active')
+        }
+    }
+
+}
+
+
 // Logica unificada do scroll da pagina
 window.addEventListener('scroll', function () {
     changeHeaderWhenScroll()
     backToTop()
+    activateMenuAtCurrentSection()
 })
 
-// MENU ATIVO CONFORME A SEÇÃO VISIVEL NA PAGINA
+
