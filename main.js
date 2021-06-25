@@ -42,6 +42,12 @@ const swiper = new Swiper('.swiper-container', {
     },
     mousewheel: true,
     keyboard: true,
+    breakpoints: {
+        767: {
+            slidesPerView: 2,
+            setWrapperSize: true
+        }
+    }
 })
 
 // ScrollReveal JS Mostrar elementos quando der scroll na pagina
@@ -80,3 +86,5 @@ window.addEventListener('scroll', function () {
     changeHeaderWhenScroll()
     backToTop()
 })
+
+// MENU ATIVO CONFORME A SEÇÃO VISIVEL NA PAGINA
