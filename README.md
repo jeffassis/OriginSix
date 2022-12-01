@@ -24,12 +24,13 @@ Este projeto é um site desenvolvido para a trilha Origin da sexta edição da N
 Este desafio consistiu em desenvolver um site no estilo mobile first, onde toda a aplicação foi pensada e desenvolvida a partir de uma tela pequena e adaptada posteriormente para telas maiores. As tecnologias utilizadas
 foram HTML5, CSS3, Javascript e outras duas libraries, a Swiper e a Scrollrevealjs.
 
-
-
 ### Screenshot
 
-![Interface projeto OriginSix]()
-
+![Interface projeto OriginSix](https://github.com/jeffassis/OriginSix/blob/main/Imagens/web1.png)
+![Interface projeto OriginSix](https://github.com/jeffassis/OriginSix/blob/main/Imagens/web2.png)
+![Interface projeto OriginSix](https://github.com/jeffassis/OriginSix/blob/main/Imagens/web3.png)
+![Interface projeto OriginSix](https://github.com/jeffassis/OriginSix/blob/main/Imagens/web4.png)
+![Interface projeto OriginSix](https://github.com/jeffassis/OriginSix/blob/main/Imagens/web5.png)
 
 
 ## Meu processo
